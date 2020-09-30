@@ -1,0 +1,55 @@
+.main-entrevistas {
+    h1:first-of-type {
+        text-align: center;
+    }
+    .container {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .more-film {
+        width: fit-content;
+        background-color: $blue-dark;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        i {
+            font-size: 2rem;
+        }
+        span {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+}
+
+.inner-entrevistas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .entrevista {
+        margin: 1rem;
+        iframe {
+            width: 400px;
+            height: 200px;
+        }
+        .info {
+            width: 90%;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: $gray-light;
+            color: $blue-darkest;
+            border-radius: 1rem;
+            .filme, .diretor, .roteiro, .estreia {
+                text-align: center;
+                h4 {
+                    display: inline;
+                }
+                span {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
