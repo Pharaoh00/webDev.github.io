@@ -1,0 +1,172 @@
+/* -- COMEÇO HEADER -- */
+
+/* Criando o grid para o header/menu
+Como há a necessidade de colocar os elementos exatamente
+onde quero, o uso do grid é essencial.
+ */
+ header {
+    display: grid;
+    align-items: center;
+    /* "Simulando" o bootstrap */
+    grid-template-columns: repeat(12, 1fr);
+    /* Criando um espaço total para as magens */
+    width: 95vw;
+    /* Centralizando o bloco */
+    margin: 2rem auto;
+    /* Gambiarra? */
+    overflow: hidden;
+    font-weight: 900;
+}
+/* Colocando a logo na esquerda */
+.img-header-logo {
+    grid-column: 1/2;
+    /* Colocando flex para a letra e a logo ficarem na mesma linha
+       e poder alinhar os elementos mais facil.
+     */
+    display: flex;
+    align-items: center;
+    img {
+        width: 100px;
+    }
+    .text {
+        font-size: 4rem;
+        /* Fonte customizada */
+        font-family: "Riffic Free";
+        letter-spacing: 3px;
+        color: $yellow-brightest;
+        margin-left: 1rem;
+    }
+    .text::after {
+        content: '';
+        display: block;
+        width: 90%;
+        height: 2px;
+        background-color: $gray-light;
+        margin: 0 auto;
+    }
+}
+
+/* Colocando o menu no meio */
+.main-nav {
+    grid-column: 2/11;
+    ul {
+        /* Fazendo com que a lista seja flex para todo os elementos  
+           ficarem na mesma linha e alinhar mais facil.
+        */
+        display: flex;
+        /* Caso não haja espaço, pule elementos para a proxima linha. */
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 2rem;
+        /* Colocando margem em todos os itens da lista, menos o primiro. */
+        li:not(:first-of-type) {
+            margin-left: 2rem;
+        }
+        /* Truque para colocar uma "borda" bottom sem peder o alinhamento. */
+        li::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $yellow-darkest;
+        }
+    }
+}
+
+/* Colocando a barra de procuro no canto direito */
+.main-search {
+    grid-column: 11/13;
+    /* Gambiarra */
+    width: 100%;
+    height: 100%;
+    .search {
+        /* Fazendo com que a posição seja relativa para
+           poder alinhar outros elementos como absoluto.
+         */
+        position: relative;
+        /* Gambiarra,
+           por algum motivo a barra não quer ser alinhada.
+           Como a posição é relativa pode-se utilizar top/left/bottom/right.
+           top: 50% para colocar no meio.
+         */
+        top: 50%;
+        /* Tirar metade do tamanho do proprio elemento no calculo.
+           Assim o elemento fica "perfeitamente" no meio.
+         */
+        transform: translateY(-50%);
+        i {
+            /* Posicionando a lupa como absoluto e a colocando onde quero. */
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: $blue-darkest;
+        }
+        /* Fazendo alguns ajustes na propria barra. */
+        .search-input {
+            width: 100%;
+            padding: 0.5rem 2rem;
+            border-radius: 1rem;
+            background-color: $yellow-brightest;
+            border: none;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    /* Mudando o layout do grid para 3 linhas*/
+    header {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    /* Alinhando a logo na primeira linha, todas as colunas. */
+    .img-header-logo {
+        grid-column: 1/13;
+        justify-content: center;
+    }
+    /* Alinhando o menu na segunda linha, todas as colunas. */
+    .main-nav {
+        grid-column: 1/13;
+        grid-row: 2/3;
+        ul {
+            li {
+                margin-left: 2rem;
+            }
+        }
+    }
+    /* Alinhando a barra na terceira linha, todas as colunas. */
+    .main-search {
+        grid-column: 1/13;
+        grid-row: 3/4;
+        .search {
+            /* Gambiarra */
+            display: flex;
+            justify-content: center;
+            i {
+                left: 25.6%;
+            }
+            .search-input {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 828px) {
+    header {
+        .main-nav {
+            ul {
+                /* Retirando o quarto elemento do menu,
+                   acabou que não iria caber todos.
+                 */
+                li:nth-child(4) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+/* -- FIM HEADER -- */

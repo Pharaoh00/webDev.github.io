@@ -1,0 +1,21 @@
+@import "variables";
+@import "header";
+@import "carousel";
+@import "cards-avaliacao";
+@import "entrevista";
+@import "novidade-sobre";
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray-light;
+    color: $yellow-darkest;
+    font-size: 2rem;
+    padding: 2rem;
+    margin-top: 1rem;
+    span {
+        color: $blue-darkest;
+        margin-left: 2px;
+    }
+}

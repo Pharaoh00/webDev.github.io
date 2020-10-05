@@ -1,0 +1,874 @@
+@charset "UTF-8";
+/* -- COMEÇO SITE GERAL --  */
+/* Font customizada. Usada na letra da logo. */
+@font-face {
+  font-family: 'Riffic';
+  src: url("assets/font/subset-RifficFree-Bold.woff2") format("woff2"), url("assets/font/subset-RifficFree-Bold.woff") format("woff"), url("assets/font/subset-RifficFree-Bold.ttf") format("truetype"), url("assets/font/subset-RifficFree-Bold.svg") format("svg");
+}
+
+.circulo1 {
+  width: 40vw;
+  height: 40vw;
+  border: 10px solid #F5D358;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.circulo2 {
+  width: 50vw;
+  height: 50vw;
+  border: 10px solid #F5D358;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.circulo3 {
+  width: 60vw;
+  height: 60vw;
+  border: 10px solid #F5D358;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/* COMEÇO BOTÃO MENU DROPDOWN */
+.dropdown-toggle {
+  background: transparent;
+  font-size: 1.5rem;
+  border: 1px solid #1e2b37 !important;
+  color: #1e2b37;
+  border-radius: 10px;
+}
+
+.dropdown-toggle:hover {
+  background: #1e2b37;
+  font-size: 1.5rem;
+}
+
+.dropdown-toggle[aria-expanded="true"] {
+  background: #1e2b37 !important;
+  color: #eceeec !important;
+}
+
+.dropdown-menu {
+  font-size: 1.5rem;
+  width: 100%;
+  background-color: #1e2b37;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  color: #eceeec;
+  background-color: #1e2b37;
+  padding: 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: #eceeec;
+  color: #1e2b37;
+}
+
+/* FIM BOTÃO MENU DROPDOWN */
+/* COMEÇO BOTÃO "mais" GERAL */
+.my-btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 1rem 4rem;
+}
+
+.my-btn-more .wrapper {
+  background-color: #1e2b37;
+  color: #eceeec;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .my-btn-more {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/* FIM BOTÃO "mais" GERAL */
+/* Ajustando todo os H1 da pagina */
+h1 {
+  font-size: 3rem;
+  /* Ajustar o tamanho da box */
+  display: inline-block;
+  font-family: 'Piazzolla', serif;
+}
+
+/* Colocando a linha em baixo da letra */
+h1::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #F5D358;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  font-family: 'Piazzolla', serif;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+body {
+  background-color: #1e2b37 !important;
+  color: #eceeec !important;
+}
+
+a {
+  text-decoration: none;
+  color: #eceeec;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #eceeec;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 750px) {
+  .circulo1 {
+    display: none;
+  }
+  .circulo2 {
+    display: none;
+  }
+  .circulo3 {
+    display: none;
+  }
+}
+
+/* -- FIM SITE GERAL --  */
+/* -- COMEÇO HEADER -- */
+/* Criando o grid para o header/menu
+Como há a necessidade de colocar os elementos exatamente
+onde quero, o uso do grid é essencial.
+ */
+header {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* "Simulando" o bootstrap */
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  /* Criando um espaço total para as magens */
+  width: 95vw;
+  /* Centralizando o bloco */
+  margin: 2rem auto;
+  /* Gambiarra? */
+  overflow: hidden;
+  font-weight: 900;
+}
+
+/* Colocando a logo na esquerda */
+.img-header-logo {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  /* Colocando flex para a letra e a logo ficarem na mesma linha
+       e poder alinhar os elementos mais facil.
+     */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.img-header-logo img {
+  width: 100px;
+}
+
+.img-header-logo .text {
+  font-size: 4rem;
+  /* Fonte customizada */
+  font-family: "Riffic Free";
+  letter-spacing: 3px;
+  color: #F5D358;
+  margin-left: 1rem;
+}
+
+.img-header-logo .text::after {
+  content: '';
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: #eceeec;
+  margin: 0 auto;
+}
+
+/* Colocando o menu no meio */
+.main-nav {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 9;
+  grid-column: 2/11;
+}
+
+.main-nav ul {
+  /* Fazendo com que a lista seja flex para todo os elementos  
+           ficarem na mesma linha e alinhar mais facil.
+        */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Caso não haja espaço, pule elementos para a proxima linha. */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  /* Colocando margem em todos os itens da lista, menos o primiro. */
+  /* Truque para colocar uma "borda" bottom sem peder o alinhamento. */
+}
+
+.main-nav ul li:not(:first-of-type) {
+  margin-left: 2rem;
+}
+
+.main-nav ul li::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #AB8707;
+}
+
+/* Colocando a barra de procuro no canto direito */
+.main-search {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11/13;
+  /* Gambiarra */
+  width: 100%;
+  height: 100%;
+}
+
+.main-search .search {
+  /* Fazendo com que a posição seja relativa para
+           poder alinhar outros elementos como absoluto.
+         */
+  position: relative;
+  /* Gambiarra,
+           por algum motivo a barra não quer ser alinhada.
+           Como a posição é relativa pode-se utilizar top/left/bottom/right.
+           top: 50% para colocar no meio.
+         */
+  top: 50%;
+  /* Tirar metade do tamanho do proprio elemento no calculo.
+           Assim o elemento fica "perfeitamente" no meio.
+         */
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  /* Fazendo alguns ajustes na propria barra. */
+}
+
+.main-search .search i {
+  /* Posicionando a lupa como absoluto e a colocando onde quero. */
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #1e2b37;
+}
+
+.main-search .search .search-input {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: #F5D358;
+  border: none;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1280px) {
+  /* Mudando o layout do grid para 3 linhas*/
+  header {
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  /* Alinhando a logo na primeira linha, todas as colunas. */
+  .img-header-logo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  /* Alinhando o menu na segunda linha, todas as colunas. */
+  .main-nav {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  .main-nav ul li {
+    margin-left: 2rem;
+  }
+  /* Alinhando a barra na terceira linha, todas as colunas. */
+  .main-search {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+  .main-search .search {
+    /* Gambiarra */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main-search .search i {
+    left: 25.6%;
+  }
+  .main-search .search .search-input {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 828px) {
+  header .main-nav ul {
+    /* Retirando o quarto elemento do menu,
+                   acabou que não iria caber todos.
+                 */
+  }
+  header .main-nav ul li:nth-child(4) {
+    display: none;
+  }
+}
+
+/* -- FIM HEADER -- */
+/* -- COMEÇO CAROUSEL -- */
+.main-carousel h1:first-of-type {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.wrapper-carousel-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper-carousel-item .iframe-container {
+  width: 30vw;
+  height: 300px;
+}
+
+.wrapper-carousel-item .iframe-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-carousel-item .info-container {
+  width: 60vw;
+  max-height: 300px;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.wrapper-carousel-item .info-container h3 {
+  display: inline;
+}
+
+.wrapper-carousel-item .info-container span {
+  margin-left: 3px;
+}
+
+.wrapper-carousel-item .info-container .sinopse p {
+  display: inline;
+  margin-left: 3px;
+}
+
+.wrapper-carousel-item .info-container .film-info span {
+  font-size: 1.5rem;
+}
+
+.wrapper-carousel-item .info-container .film-info div {
+  margin: 1rem 0;
+}
+
+.wrapper-carousel-item .info-container .film-info .elenco ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.wrapper-carousel-item .info-container .film-info .elenco ul li {
+  font-size: 1.5rem;
+  margin: 2px 2px;
+}
+
+.wrapper-carousel-item .info-container .film-info .elenco ul li::after {
+  content: '|';
+}
+
+.carousel-inner {
+  margin: 2rem auto;
+}
+
+/* COLOCANDO O CAROUSEL EM MODO COLUNA PARA APRESENTAR O CONTEUDO MELHOR */
+@media screen and (max-width: 1280px) {
+  .wrapper-carousel-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .wrapper-carousel-item .iframe-container {
+    width: 50vw;
+  }
+}
+
+/* FIM CAROUSEL */
+/* -- COMEÇO AVALIAÇÃO e CARDS -- */
+.main-cards-avaliacao {
+  background-color: #eceeec;
+  color: #1e2b37;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+}
+
+.main-cards-avaliacao h1:first-of-type {
+  margin: 1rem 0;
+}
+
+.main-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-cards .single-card {
+  /* Posição do card relativa para colocar o nome do filme como absolute */
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 325px;
+  margin: 1rem 1rem;
+  -webkit-filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(-4px 4px 3px rgba(0, 0, 0, 0.5));
+}
+
+.main-cards .single-card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+
+.main-cards .single-card .info {
+  /* Nome do filme em cima da imagem */
+  font-size: 2rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1e2b37;
+  color: #F5D358;
+  /* Bordar na esquerda e direita no canto inferior
+               Lembrando que o valor deve ser o mesmo da border-radius da imagem.
+             */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* Gambiarra */
+.h1-avaliacao {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.head-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 62vw;
+  margin: 0 auto;
+}
+
+.main-avaliacaos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-avaliacaos .avaliacao {
+  /* Para caber todo mundo na mesma linha */
+  max-width: 300px;
+  margin: 1rem 1rem;
+  border: solid 2px #1e2b37;
+  border-radius: 1rem;
+  padding: 1rem;
+  /* Gambiarra */
+}
+
+.main-avaliacaos .avaliacao h2:first-of-type {
+  display: inline;
+  margin-left: 1rem;
+}
+
+.main-avaliacaos .avaliacao img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.main-avaliacaos .avaliacao .info {
+  /* Nome do filme com o campo "Nome do Filme" ficarem na mesma linha */
+}
+
+.main-avaliacaos .avaliacao .info h3 {
+  display: inline;
+}
+
+.main-avaliacaos .avaliacao .info span {
+  font-size: 1.5rem;
+  margin-left: 2px;
+}
+
+.main-avaliacaos .avaliacao p {
+  /* Colocando valor da altura maxima para dar o scroll. */
+  padding: 1rem;
+  height: 150px;
+  /* Se caso ultrapassar a altura maxima, faça um scroll */
+  overflow-y: auto;
+}
+
+.main-avaliacaos .avaliacao .star-date-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main-avaliacaos .avaliacao .star-date-info .date {
+  margin-left: 1rem;
+}
+
+/* -- FIM AVALIAÇÃO e CARDS --  */
+/* -- COMEÇO ENTREVISTA & MAKING OF -- */
+.main-entrevista-making h1:first-of-type {
+  /* Colocando o h1 no meio, "gambiarra" (PS: Em todos os h1 são assim) */
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main-entrevista-making .main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #1e2b37;
+  margin: 2rem 0;
+}
+
+.main-entrevista-making .main-content .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+  max-width: 350px;
+  text-align: center;
+  background-color: #eceeec;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.main-entrevista-making .main-content .content .iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.main-entrevista-making .main-content .content .film-info {
+  /* Colocando o "titulo" na mesma linha */
+}
+
+.main-entrevista-making .main-content .content .film-info .diretor h3, .main-entrevista-making .main-content .content .film-info .estreia h3 {
+  display: inline;
+}
+
+/* -- FIM ENTREVISTA & MAKING OF -- */
+/* -- COMEÇO NOVIDADES -- */
+.novidade-sobre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-novidades {
+  padding: 0 1rem;
+}
+
+.main-novidades h1:first-of-type {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main-novidades .novidade {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.main-novidades .novidade img {
+  width: 200px;
+  height: 100px;
+  /* Caso a imagem seja maior, não deixa-la ficar em alguma forma estranha. */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-novidades .novidade .info {
+  padding: 0 1rem;
+}
+
+.main-novidades .novidade .info p {
+  max-height: 100px;
+  /* Se caso ultrapassar a altura maxima, faça um scroll */
+  overflow-y: auto;
+}
+
+.main-novidades hr {
+  border: 1px solid #eceeec;
+}
+
+.main-sobre-editorial {
+  padding: 0 1rem;
+}
+
+.main-sobre-editorial .sobre p {
+  margin: 1rem 0;
+}
+
+.main-sobre-editorial .editorial .redacao h3, .main-sobre-editorial .editorial .pesquisa h3, .main-sobre-editorial .editorial .gerente h3 {
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.main-sobre-editorial .editorial .redacao span, .main-sobre-editorial .editorial .pesquisa span, .main-sobre-editorial .editorial .gerente span {
+  font-size: 1.5rem;
+  margin-left: 3px;
+}
+
+.main-sobre-editorial .social {
+  margin-top: 1rem;
+}
+
+.main-sobre-editorial .social i {
+  margin-top: 1rem;
+  font-size: 4rem;
+  margin-right: 2rem;
+}
+
+/* Modificando o conteudo para coluna. */
+@media screen and (max-width: 1280px) {
+  .novidade-sobre {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-sobre-editorial .sobre h1:first-of-type {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .main-sobre-editorial .editorial {
+    /* Gambiarra para resoluções menores */
+  }
+  .main-sobre-editorial .editorial h1:first-of-type {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .main-sobre-editorial .editorial .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+/* -- FIM NOVIDADES -- */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eceeec;
+  color: #AB8707;
+  font-size: 2rem;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+footer span {
+  color: #1e2b37;
+  margin-left: 2px;
+}
+/*# sourceMappingURL=styles.css.map */

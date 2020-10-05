@@ -1,0 +1,22 @@
+Olá, tudo bem? 
+Eu optei por não utilizar o bootstrap para fazer o site,
+se possível, por favor, não retire pontos por causa disso.
+
+Tentei o meu melhor e espero que goste do meu site.
+
+Agradeço desde já,
+Hamon-Rá Taveira Guimarães, Engenharia da Computação.
+
+PS:
+Me utilizei de uma ferramenta que chama "sass", é um css com "super poderes",
+pode procurar na net kkkk.
+Na verdade, não deixa de ser um css normal, mas ajuda na criação e adiciona
+alguns -web-kits em algumas propriedades, coisas que seriam bem difíceis de se
+fazer a mão.
+Os arquivos estão com a extensão .scss e estão todos em:
+							assets>assets>css
+O arquivos principal é styles.css, lá se encontra todas as modificações.
+
+Para o carousel e o dropdown menu, me utilizei do bootstrap, até mesmo para a 
+simplificação. Ai você pensa, "porque então não fez o site todo usando o bootstrap?",
+acho mais simples e facil do que o mesmo.

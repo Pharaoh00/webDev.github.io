@@ -1,0 +1,205 @@
+$yellow-darkest: #AB8707;
+$yellow-dark: #B59316;
+$yellow: #EAC435;
+$yellow-bright: #BD9504;
+$yellow-brightest: #F5D358;
+
+$blue-darkest: #1e2b37;
+$blue-dark: #2f3c48;
+$blue-light: #3e4d59;
+
+$gray-light: #eceeec;
+$gray-dark: #909090;
+
+$orange-dark: #cc330d;
+$orange: #f2460d;
+$orange-light: #ff9933;
+
+/* -- COMEÇO SITE GERAL --  */
+/* Font customizada. Usada na letra da logo. */
+@font-face {
+    font-family: 'Riffic';
+    src: url('assets/font/subset-RifficFree-Bold.woff2') format('woff2'),
+         url('assets/font/subset-RifficFree-Bold.woff') format('woff'),
+         url('assets/font/subset-RifficFree-Bold.ttf') format('truetype'),
+         url('assets/font/subset-RifficFree-Bold.svg') format('svg');
+}
+
+.circulo1 {
+    width: 40vw;
+    height: 40vw;
+    border: 10px solid $yellow-brightest;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.circulo2 {
+    width: 50vw;
+    height: 50vw;
+    border: 10px solid $yellow-brightest;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.circulo3 {
+    width: 60vw;
+    height: 60vw;
+    border: 10px solid $yellow-brightest;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+/* COMEÇO BOTÃO MENU DROPDOWN */
+.dropdown-toggle {
+    background: transparent;
+    font-size: 1.5rem;
+    border: 1px solid $blue-darkest !important;
+    color: $blue-darkest;
+    border-radius: 10px;
+}
+.dropdown-toggle:hover {
+    background: $blue-darkest;
+    font-size: 1.5rem;
+}
+
+.dropdown-toggle[aria-expanded="true"] {
+    background: $blue-darkest !important;
+    color: $gray-light !important;
+}
+
+.dropdown-menu {
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: $blue-darkest;
+    border-radius: 10px;
+}
+.dropdown-item {
+    color: $gray-light;
+    background-color: $blue-darkest;
+    padding: 1rem;
+}
+.dropdown-item:hover {
+    background-color: $gray-light;
+    color: $blue-darkest;
+}
+
+/* FIM BOTÃO MENU DROPDOWN */
+
+/* COMEÇO BOTÃO "mais" GERAL */
+.my-btn-more {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 4rem;
+    .wrapper {
+        background-color: $blue-darkest;
+        color: $gray-light;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .my-btn-more {
+        justify-content: center;
+    } 
+}
+
+/* FIM BOTÃO "mais" GERAL */
+
+/* Ajustando todo os H1 da pagina */
+h1 {
+    font-size: 3rem;
+    /* Ajustar o tamanho da box */
+    display: inline-block;
+    font-family: 'Piazzolla', serif;
+}
+/* Colocando a linha em baixo da letra */
+h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $yellow-brightest;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    font-family: 'Piazzolla', serif;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+body {
+    background-color: $blue-darkest !important;
+    color: $gray-light !important;
+
+}
+
+a {
+    text-decoration: none;
+    color: $gray-light;
+}
+
+a:link {
+    text-decoration: none;
+}
+  
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $gray-light;
+}
+  
+a:active {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 750px) {
+    .circulo1 {
+        display: none;
+    }
+    
+    .circulo2 {
+        display: none;
+    }
+    
+    .circulo3 {
+        display: none;
+    }
+}
+/* -- FIM SITE GERAL --  */

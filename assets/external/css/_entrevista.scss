@@ -1,0 +1,42 @@
+/* -- COMEÇO ENTREVISTA & MAKING OF -- */
+.main-entrevista-making {
+    h1:first-of-type {
+        /* Colocando o h1 no meio, "gambiarra" (PS: Em todos os h1 são assim) */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: $blue-darkest;
+        margin: 2rem 0;
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem;
+            max-width: 350px;
+            text-align: center;
+            background-color: $gray-light;
+            padding: 1rem;
+            border-radius: 1rem;
+            .iframe-wrapper {
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .film-info {
+                /* Colocando o "titulo" na mesma linha */
+                .diretor, .estreia {
+                    h3 {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}
+/* -- FIM ENTREVISTA & MAKING OF -- */
